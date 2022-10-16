@@ -41,18 +41,17 @@ class MyStatelessWidget extends StatelessWidget {
               onPressed: () {},
               child: const Text('Disabled'),
             ),
-            TextButton(
+            OutlinedButton(
               onPressed: () {},
               child: const Text('Enable'),
             ),
-            TextButton(
+            ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
-
                 backgroundColor: MaterialStateProperty.all(
-                  Colors.blue),
+                  Colors.yellow),
                 foregroundColor: MaterialStateProperty.all(
-                  Colors.white),
+                  Colors.black),
               ),
               child: const Text("Gradient"),
               ),
