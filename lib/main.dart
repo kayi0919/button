@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(MyApp());
@@ -55,6 +56,45 @@ class MyStatelessWidget extends StatelessWidget {
               ),
               child: const Text("Gradient"),
               ),
+            IconButton(
+              iconSize: 50,
+              color: Colors.orange,
+              icon: const Icon(Icons.phone_iphone),
+              onPressed:(){},
+            ),
+            FloatingActionButton(
+              onPressed: (){},
+              child:const Icon(Icons.phone_iphone),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                    Colors.grey),
+                foregroundColor: MaterialStateProperty.all(
+                    Colors.black),
+              ),
+              child: const Icon(Icons.phone_iphone),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                final snackBar = SnackBar(
+                  content: const Text('按到SnackBar!'),
+                  action: SnackBarAction(
+                    label: 'Toast訊息',
+                    onPressed: () => Fluttertoast.showToast(
+                      msg:'你按下SnackBar',
+                      toastLength: Toast.LENGTH_LONG,
+                      gravity: ToastGravity.CENTER,
+                      backgroundColor: Colors.green,
+                      textColor: Colors.white,
+                      fontSize: 30.0),
+                  ),
+                );
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              },
+              child: const Text('SnackBar'),
+            ),
           ],
         )
       ],
